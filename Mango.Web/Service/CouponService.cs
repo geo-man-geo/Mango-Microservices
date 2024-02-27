@@ -2,6 +2,8 @@
 using Mango.Web.Service.IService;
 using Mango.Web.Models.Utilities;
 
+#pragma warning disable CS8603 // Possible null reference return.
+
 namespace Mango.Web.Service
 {
     public class CouponService : ICouponService
@@ -19,6 +21,7 @@ namespace Mango.Web.Service
                 Url = SD.CouponAPIBase + "/api/couponAPI/",
                 Data = couponDto
             }) ;
+
         }
 
         public async Task<ResponseDto> DeleteCouponAsync(int couponId)
