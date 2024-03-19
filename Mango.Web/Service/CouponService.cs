@@ -1,6 +1,6 @@
 ﻿using Mango.Web.Models;
-using Mango.Web.Service.IService;
 using Mango.Web.Models.Utilities;
+using Mango.Web.Service.IService;
 
 #pragma warning disable CS8603 // Possible null reference return.
 
@@ -20,7 +20,7 @@ namespace Mango.Web.Service
                 ApiType = SD.ApiType.POST,
                 Url = SD.CouponAPIBase + "/api/couponAPI/",
                 Data = couponDto
-            }) ;
+            });
 
         }
 
@@ -48,7 +48,7 @@ namespace Mango.Web.Service
             {
                 ApiType = SD.ApiType.GET,
                 Url = SD.CouponAPIBase + "/api/couponAPI/GetByCode" + couponCode
-            }) ;
+            });
         }
 
         public async Task<ResponseDto> GetCouponByIdAsync(int couponId)
