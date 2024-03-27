@@ -29,9 +29,6 @@ namespace Mango.Web.Service
                 {
                     throw new ArgumentNullException(nameof(requestDto.Url), "URL cannot be null");
                 }
-
-
-
                 message.RequestUri = new Uri(requestDto.Url);
 
             if (requestDto.Data != null)
