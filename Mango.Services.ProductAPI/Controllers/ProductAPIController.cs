@@ -39,8 +39,25 @@ namespace Mango.Services.ProductAPI.Controllers
             return _response;
         }
 
+		[HttpGet]
+		[Route("{id:int}")]
+		public ResponseDto Get(int id)
+		{
+            try
+            {
+                Product obj = _db.Products.First(u => u.ProductId == id);
 
-        [HttpPost]
+                _response.Response = _mapper.Map<ProductDto>(obj);
+			}
+			catch (Exception ex)
+			{
+				_response.IsSuccess = false;
+				_response.Message = ex.Message;
+			}
+			return _response;
+		}
+
+		[HttpPost]
         public ResponseDto AddProduct([FromBody] ProductDto ProductDto)
         {
             try
